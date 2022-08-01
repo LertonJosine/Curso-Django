@@ -1,5 +1,5 @@
-ambiente
-Anotacoes.txt
-
+../ambiente
+../Anotacoes.txt
+projecto
 db.sqlite3
 manage.py

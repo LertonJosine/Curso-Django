@@ -1,0 +1,64 @@
+Aula 15
+
+É aconcelhavel criar o projecto usando o comando
+
+django-admin startproject projecto .
+
+pois desse jeito ele irá iniciar o projecto na pasta em que estamos
+e o arquivo manage.py também será criado no mesmo local
+Caso não coloque o ponto ele vai criar uma pasta com o nome do
+projecto que foi criado que terá um projecto lá dentro e mais o
+arquivo manage.py
+
+
+Aula 16
+
+Entendendo os arquivos inicias de um projecto django
+.mypy_cache - O mypy é um plug in para analizar a tipagem do codico e outras
+
+venv - Nosso ambiente virtual
+db.sqlite3 - A nossa base de dados (Apenas para ambinte de desenvolvimento)
+manage.py - Usado para executar comandos
+__init__.py - serve para indicar que o projecto é um pacote do python
+asgi.py e wsgi.py - fazem a ligação emtre o django e o webserver (sao usados em produção)
+settings.py - são configurações do projecto
+urls.py - É "a porta de entrada" quando alguém digita um endereço ele carega nesse arquivo as configuracoes
+
+
+A diferença entre o django-admin e o manage.py é que o manage.py configura o path a fim de carregar o arquivo settings.py
+e obter as configurações do ambiente django
+
+Aula 19
+
+Aula 20
+
+Nesta aula iremos configurar a pagina inicial do nosso site.
+Para tal precisamos configurar o path no arquivo urls.py
+
+o arquivo urls.py é onde iremos configurar os nossos path
+
+a inicio é necessario fazer a seguinte importacao:
+
+from django.urls import path
+
+depois da importacao devemos entao criar uma lista de caminhos/path chamada urlpatterns
+
+Ex.: urlpathers[]
+
+geralmente no ambito da criacao do projecto django como os arquivos são
+gerados automaticamente isso já vem configurado e vem com o path para o site do admin
+
+Ex.: urlpatterns[
+		path('admin/', admin.site.urls),
+]
+
+basicamente o utilizador irá fazer uma requesição http ex.: localhost:8000/sobre/
+isso é um request que irá ser passado como parametro, por isso ao definirmos a nossa
+função devemos passar o parametro request que receberá a requesição
+
+após isso devemos retornar alguma coisa para o nosso cliente e isso é um http response
+esse retorno é feito pela função e para tal precisamo importar um objecto da classe django.http que é
+o HttpResponse
+
+Ex.: from django.http import HttpResponse
+
