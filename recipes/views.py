@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse("Pagina inicial")
+    return render(request, 'home.html')
 
 
 def sobre(request):
